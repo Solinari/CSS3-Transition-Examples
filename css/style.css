@@ -1,0 +1,194 @@
+body {
+	background: #F6F6F6;
+}
+
+h2 {
+	margin: 0 0 20px;
+	text-align: center;
+}
+
+h3 {
+	margin: 0 0 15px;
+	font-size: 18px;
+}
+
+section {
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.box {
+	background: #FFF;
+	margin-bottom: 20px;
+	padding: 20px;
+	min-height: 150px;
+	text-align: center;
+	border-radius: 4px;
+	/*vendor prefix's would go here*/
+}
+
+/* link box transition */
+/* begin state */
+.link a {
+	display: inline-block;
+	padding: 3px 2px;
+	border-radius: 3px;
+	/*shorthand notattion*/
+	transition: 0.5s ease all;
+}
+
+/* end state transition*/
+.link a:hover {
+	/*get rid of underline*/
+	text-decoration: none;
+	/*increase padding*/
+	padding: 3px 9px;
+	background: #FFDCDC;
+	color: #8a1717;
+}
+
+/* button box transition*/
+.button a {
+	transition: 0.3s ease all;
+}
+
+.button :hover {
+	padding: 20px 30px;
+	border-radius: 50%;
+
+}
+/*opacity transition*/
+.opacity a {
+	transition: 0.3s ease all;
+}
+
+.opacity:hover a {
+	text-decoration: none;
+	opacity: 0;
+}
+
+/*movement transition*/
+
+.movement a {
+	transition: 1s linear all;
+}
+
+/* override timing on last child*/
+.movement:hover a:last-child {
+	transition-duration: 5s;
+}
+
+/*first button*/
+.movement:hover a {
+	transform:translateY(-20px);
+}
+/*second button*/
+.movement:hover a:last-child {
+	transform:translateY(20px);
+}
+
+/* rotate transition*/
+.rotate {
+	transition: 0.5s ease all;
+}
+
+.rotate:hover {
+	transform: rotate(270deg);
+}
+
+/*delay transition*/
+.delayed h3 {
+	transition: 0.5s ease all;
+	transition-delay: 1s;
+}
+
+.delayed:hover h3 {
+	transform: translateX(100px);
+}
+
+
+/* profile box*/
+.profile-box {
+	width: 300px;
+	height: 300px;
+	margin: 0 auto 30px;
+	position: relative;
+	border-radius: 4px;
+	overflow: hidden;
+	/*profile box transition*/
+	transition: 0.3s ease all;
+}
+.profile-box:hover {
+	/* lifts off and casts shadow*/
+	transform: translateY(-10px);
+	box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.profile-box img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+	border-radius: 4px;
+	/*img transitions*/
+	transition: 1s ease all;
+}
+
+.profile-box:hover img {
+	transform: scale(1.5);
+}
+
+.profile-box .box-content {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	z-index: 999;
+	padding: 20px 20px 0;
+	/*a is alpha; the opacity*/
+	background: rgba(0,0,0,0.5);
+	color: #FFF;
+	/*transitions*/
+	transition: 0.3s ease all;
+}
+.profile-box:hover .box-content {
+	/*brings box lip up*/
+	padding-bottom: 40px;
+	padding-top: 40px;
+}
+
+.profile-box .box-content h3 {
+	margin-bottom: 15px;
+}
+
+.profile-box .social-links {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.profile-box .social-links li {
+	width: 15px;
+	height: 15px;
+	background: #EFEFEF;
+	display: inline-block;
+	margin-right: 4px;
+	border-radius: 50%;
+	/* transitions + tranform to start*/
+	transition: 0.3s ease all;
+	transform: translateY(100px);
+}
+/*delay children's transition*/
+.profile-box .social-links li:nth-child(2) {
+	transition-delay: 0.25s;
+}
+
+.profile-box .social-links li:last-child {
+	transition-delay: 0.5s;
+}
+
+.profile-box:hover .social-links li {
+	transform: none;
+}
